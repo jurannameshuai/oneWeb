@@ -360,7 +360,7 @@ else {
 		}
 	}
 }
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include mymps_tpl($cat['template'] ? $cat['template'] : 'list');
 is_object($db) && $db->Close();
 $cachetime && $cachepages->caching();
