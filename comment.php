@@ -156,6 +156,7 @@ $ajax_content .= '
 	</div>
 </div>
 ';
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 echo $ajax_content;
 is_object($db) && $db -> Close();
 unset($ajax_concotent,$iflogin,$mymps_global,$member_log,$comment_all,$rows_num,$param,$page,$userid,$content,$inajax,$id,$part,$action,$userid,$s_uid,$db,$timestamp,$dotphpurlarray,$commentsettings);

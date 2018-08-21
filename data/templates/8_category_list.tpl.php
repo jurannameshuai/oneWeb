@@ -8,10 +8,10 @@
     <title><?=$cat['title']?></title>
     <meta name="description" content="<?=$cat['description']?>">
     <meta name="keywords" content="<?=$cat['keywords']?>">
-<link type="text/css" rel="stylesheet" href="template/css/global.css">
-<link type="text/css" rel="stylesheet" href="template/css/style.css">
-    <link type="text/css" rel="stylesheet" href="template/css/list.css">
-    <link type="text/css" rel="stylesheet" href="template/css/filter.css">
+<link type="text/css" rel="stylesheet" href="/template/css/global.css">
+<link type="text/css" rel="stylesheet" href="/template/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/template/css/list.css">
+    <link type="text/css" rel="stylesheet" href="/template/css/filter.css">
     <script>window['current'] = '<?=$cat['catname']?>';</script>
 </head>
 
@@ -40,6 +40,7 @@
             <?php if(is_array($cat_list)){foreach($cat_list as $k => $mymps) { ?>            <ul>
                 <a class="<? echo $mymps['catid'] == $catid ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$mymps['catid']?>" class="t">不限</a></li>
                 <?php if(is_array($mymps['children'])){foreach($mymps['children'] as $u => $w) { ?>                <a class="<? echo $w['catid'] == $catid ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$w['catid']?>"><?=$w['catname']?></a>
+                <!--<a class="<? echo $w['catid'] == $catid ? 'selected' : '';; ?>" href="<?=$w['uri']?>"><?=$w['catname']?></a>-->
                 <?php }} ?>
             </ul>
             <?php }} ?> 
@@ -67,7 +68,7 @@
 
     <? if(!$distance) { ?>
     <li class="nearbyinfo" onclick="nearby(0.5,'','')">
-        <span style=" margin-right: 4px"><img src="template/images/icon_location.png" height="20" style="vertical-align:middle;"></span>
+        <span style=" margin-right: 4px"><img src="/template/images/icon_location.png" height="20" style="vertical-align:middle;"></span>
         <span id="nearby">查看附近的信息</span>
     </li>
     <?php } else { ?>
@@ -117,7 +118,7 @@
 <?php } ?>
 </div>
 <?php include mymps_tpl('footer'); ?>
-<script src="template/js/iscroll.js"></script>
+<script src="/template/js/iscroll.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 window['myScroll_parent'] = null;

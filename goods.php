@@ -172,7 +172,7 @@ function mymps_get_goods_location($catid=0,$str=''){
         $page_title = $str.'-'.$page_title;
         $location   .= ' <code>'.$raquo.'</code> &nbsp;' .$str;
     }
-	
+    $mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 	$cur = array('page_title'=>$page_title,'location'=>$location);
 	unset($page_title,$cat,$location,$type,$goods_class);
     return $cur;

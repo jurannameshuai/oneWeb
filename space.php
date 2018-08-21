@@ -27,7 +27,7 @@ $space['prelogo'] = $space['prelogo'] ? $space['prelogo'] : $mymps_global[SiteUr
 $loc 		= get_location('space','',$user);
 $location 	= $loc['location'];
 $page_title = $loc['page_title'];
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 globalassign();
 include mymps_tpl('index');
 is_object($db) && $db->Close();

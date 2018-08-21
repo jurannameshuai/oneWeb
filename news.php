@@ -116,7 +116,7 @@ if($id) {
 	$adveritems				= $advertisement['items'];
 	$advertisement			= $advertisement['all'];
 }
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 globalassign();
 include mymps_tpl(CURSCRIPT);
 is_object($db) && $db->Close();

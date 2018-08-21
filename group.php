@@ -159,7 +159,7 @@ function get_group_location($cate_id=0,$str=''){
         $page_title = $str.'-'.$page_title;
         $location   .= ' <code>'.$raquo.'</code> &nbsp;' .$str;
     }
-	
+    $mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 	$cur = array('page_title'=>$page_title,'location'=>$location);
 	unset($page_title,$cat,$location,$type,$group_class);
     return $cur;

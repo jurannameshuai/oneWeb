@@ -350,7 +350,7 @@ $totaltime = number_format(($mtime[1] + $mtime[0] - $mymps_starttime), 6);
 $sitedebug = 'Processed in '.$totaltime.' second(s) , '.$db->query_num.' queries';
 $search['keywords'] = $keywords;
 $search['tel'] = $tel;
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include ($keywords || $tel) ? mymps_tpl(CURSCRIPT.'_'.$mod) : mymps_tpl('search_index');
 is_object($db) && $db -> Close();
 ?>

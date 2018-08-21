@@ -92,6 +92,7 @@ $certifymember = mymps_get_members(10,1,NULL,1,1);
 $totalnum = $rows_num;
 $documents = get_member_docu(10);
 globalassign();
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include mymps_tpl(CURSCRIPT);
 
 is_object($db) && $db->Close();

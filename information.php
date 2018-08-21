@@ -104,7 +104,7 @@ if($cat['parentid'] > 0){
 $info['img_path'] = $info['img_path'] ? $info['img_path'] : '/images/nophoto.jpg';
 $relate_cat = get_categories_tree($info['parentid']);
 $latest_info = mymps_get_infos(10,'','','',$info['catid']);
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 globalassign();
 include mymps_tpl($info['template_info']?$info['template_info']:'info');
 is_object($db) && $db->Close();

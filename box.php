@@ -43,7 +43,7 @@ $infoid = isset($_REQUEST['infoid']) ? intval($_REQUEST['infoid']) : '';
 $uid = isset($_GET['uid']) ? intval($_GET['uid']) : '';
 
 !in_array($part,array('upgrade','shoucang','wap_shoucang','report','do_report','information','checkmemberinfo','sp_testdirs','adminmenu','member','memberinfopost','advertisement','advertisementview','jswizard','custom','iptoarea','goodsorder','score_coin','credits_up','howtogetscore','seecontact','seecontact_tel','delinfo','qiandao')) && exit('FORBIDDEN');
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include MYMPS_INC.'/box/'.$part.'.php';
 
 is_object($db) && $db->Close();

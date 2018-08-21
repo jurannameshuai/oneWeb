@@ -48,7 +48,7 @@ if((!$p1 || !$p2) && !empty($mymps_global['cfg_mappoint'])) {
 	$key = 1;
 	list($p1,$p2) = explode(',',$mymps_global['cfg_mappoint']);
 }
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 $mapflag = $mymps_global['mapflag'] ? $mymps_global['mapflag'] : 'baidu';
 $version = 1.1;
 include CURRENTDIR.'/template/box/map.html';

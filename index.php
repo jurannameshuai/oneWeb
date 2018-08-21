@@ -204,7 +204,7 @@ if($tpl_index['banmian'] == 'portal'){
 	$fourthcats = get_smplist_cats($tpl_index['smp_cats']['fourth'],$tpl_index['showstyle']);
 
 }
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include mymps_tpl('index_'.$tpl_index['banmian']);
 is_object($db) && $db->Close();
 $cachetime && $cachepages->caching();

@@ -105,7 +105,7 @@ $about['yp_uri'] = Rewrite('corp',array('part'=>'index'));
 $about['friendlink_uri'] = Rewrite('about',array('part'=>'friendlink'));
 $about['announce_uri'] = Rewrite('about',array('part'=>'announce'));
 $about['sitemap_uri'] = Rewrite('about',array('part'=>'sitemap'));
-
+$mymps_global['MUrl']= str_replace('www','3g',$mymps_global['SiteUrl']);
 include mymps_tpl($part);
 $cachetime && $cachepages->caching();
 
