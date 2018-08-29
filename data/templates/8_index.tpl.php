@@ -14,6 +14,7 @@
 </head>
 
 <body class="<?=$mymps_global['cfg_tpl_dir']?>">
+<?=$mymps?>
 <div class="wrapper">
     
 <?php include mymps_tpl('header_search'); ?>
@@ -58,7 +59,7 @@
         <div class="index_slider">
             <div class="index_slider-wrap">
                 <div class="page">
-                <?php $navigation = get_mobile_nav(2); ?>    <?php if(is_array($navigation)){foreach($navigation as $mymps) { ?>                <a href="<?=$mymps['url']?>" class="item food"><? if($mymps['ico']) { ?><div class="icon"><img src="<?=$mymps_global['SiteUrl']?><?=$mymps['ico']?>"></div><?php } echo cutstr($mymps['title'],8); ?></a>
+                <?php $navigation = get_mobile_nav(2,1); ?>    <?php if(is_array($navigation)){foreach($navigation as $mymps) { ?>                <a href="<?=$mymps['url']?>" class="item food"><? if($mymps['ico']) { ?><div class="icon"><img src="<?=$mymps_global['SiteUrl']?><?=$mymps['ico']?>"></div><?php } echo cutstr($mymps['title'],8); ?></a>
                 <?php }} ?>
                 </div>
             </div>

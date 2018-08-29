@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="<?=$mymps_global['SiteUrl']?>/template/default/js/uaredirect.js" type="text/javascript"></script>
-<!--<script type="text/javascript">uaredirect("<?=$mymps_global['SiteUrl']?>/m/index.php?mod=category&catid=<?=$catid?>");</script>-->
-<script type="text/javascript">uaredirect("<?=$mymps_global['SiteUrl']?>/m/<?=$_SERVER['REQUEST_URI']?>");</script>
+<!--<script type="text/javascript">uaredirect("<?=$mymps_global['MUrl']?><?=$_SERVER['REQUEST_URI']?>");</script>-->
+<script type="text/javascript">uaredirect("<?=$mymps_global['MUrl']?>/<?=$_SERVER['REQUEST_URI']?>");</script>
 <title><?=$page_title?></title>
 <meta name="keywords" content="<?=$cat['keywords']?>" />
 <meta name="description" content="<?=$cat['description']?>" />

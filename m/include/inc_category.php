@@ -23,7 +23,7 @@ if ($Catid) {
 
     $cat_dir = $Catid = $detail = $detailc = NULL;
 }
-$cat_list = get_categories_tree($catid);
+$cat_list = get_categories_tree($catid,'category','2',1);
 if(empty($catid)){
     include mymps_tpl('category_all');
     exit;
@@ -68,11 +68,54 @@ foreach($mymps_extra_model as $key => $val){
         }
     }
 }
+foreach ($mymps_extra_model as $key => $val ) {
+    if (is_array($val['list'])) {
+        foreach ($val['list'] as $k => $v ) {
+            $mymps_extra_model[$key]['list'][$k]['uri'] = '/' . $dir_typename . '/';
+
+            foreach ($allow_identifiers as $keys ) {
+                if ($v['identifier'] == $keys) {
+                    $mymps_extra_model[$key]['list'][$k]['uri'] .= ($v['id'] ? $keys . '-' . $v['id'] . '-' : '');
+                }
+                else {
+                    $mymps_extra_model[$key]['list'][$k]['uri'] .= ($$keys ? $keys . '-' . $$keys . '-' : '');
+                }
+            }
+
+            $mymps_extra_model[$key]['list'][$k]['uri'] = substr($mymps_extra_model[$key]['list'][$k]['uri'], 0, -1);
+            $mymps_extra_model[$key]['list'][$k]['uri'] .= '/';
+
+            if ($v['id'] == $$v['identifier']) {
+                $mymps_extra_model[$key]['list'][$k]['select'] .= 1;
+                $page_title_extra .= ($v['name'] != '不限' ? $v['name'] : '');
+            }
+            else {
+                $mymps_extra_model[$key]['list'][$k]['select'] .= 0;
+            }
+        }
+    }
+}
 
 //分类筛选
 $parentcats = get_parent_cats('category',$catid);
 $parentcats = is_array($parentcats) ? array_reverse($parentcats) : '';
 $area_list = cat_list('area',0,0,false,1);
+foreach ($area_list as $key => $val ) {
+    $area_list[$key]['uri'] = '/' . $dir_typename . '/';
+
+    foreach ($allow_identifiers as $keys ) {
+        if ($keys == 'areaid') {
+            $area_list[$key]['uri'] .= ($val['areaid'] ? $keys . '-' . $val['areaid'] . '-' : '');
+        }
+        else {
+            $area_list[$key]['uri'] .= ($$keys ? $keys . '-' . $$keys . '-' : '');
+        }
+    }
+
+    $area_list[$key]['uri'] = substr($area_list[$key]['uri'], 0, -1);
+    $area_list[$key]['uri'] .= '/';
+    $area_list[$key]['select'] = ($val['areaid'] == $areaid ? 1 : 0);
+}
 //构造SQL
 $sq = $s = '';
 if($cat['modid'] > 1){

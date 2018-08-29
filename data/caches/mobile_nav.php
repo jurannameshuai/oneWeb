@@ -53,7 +53,7 @@ $data = array (
     39 => 
     array (
       'title' => '二手转让',
-      'url' => 'index.php?mod=category&catid=1',
+      'url' => '/ershou/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_ershou.gif',
@@ -62,7 +62,7 @@ $data = array (
     40 => 
     array (
       'title' => '车辆买卖',
-      'url' => 'index.php?mod=category&catid=2',
+      'url' => '/che/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_che.gif',
@@ -71,7 +71,7 @@ $data = array (
     41 => 
     array (
       'title' => '房屋租售',
-      'url' => 'index.php?mod=category&catid=3',
+      'url' => '/fang/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_fang.gif',
@@ -80,7 +80,7 @@ $data = array (
     42 => 
     array (
       'title' => '全职招聘',
-      'url' => 'index.php?mod=category&catid=4',
+      'url' => '/zhaopin/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_zhaopin.gif',
@@ -89,7 +89,7 @@ $data = array (
     43 => 
     array (
       'title' => '兼职招聘',
-      'url' => 'index.php?mod=category&catid=5',
+      'url' => '/jianzhi/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_jzzhaopin.gif',
@@ -98,7 +98,7 @@ $data = array (
     44 => 
     array (
       'title' => '求职简历',
-      'url' => 'index.php?mod=category&catid=6',
+      'url' => '/qiuzhi/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_jianli.gif',
@@ -107,7 +107,7 @@ $data = array (
     45 => 
     array (
       'title' => '交友活动',
-      'url' => 'index.php?mod=category&catid=7',
+      'url' => '/jiaoyou/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_love.gif',
@@ -116,7 +116,7 @@ $data = array (
     46 => 
     array (
       'title' => '宠物',
-      'url' => 'index.php?mod=category&catid=8',
+      'url' => '/chongwu/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_pet.gif',
@@ -125,7 +125,7 @@ $data = array (
     47 => 
     array (
       'title' => '生活服务',
-      'url' => 'index.php?mod=category&catid=9',
+      'url' => '/shenghuo/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_life.gif',
@@ -134,7 +134,7 @@ $data = array (
     48 => 
     array (
       'title' => '教育培训',
-      'url' => 'index.php?mod=category&catid=10',
+      'url' => '/jiaoyu/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_edu.gif',
@@ -143,7 +143,7 @@ $data = array (
     49 => 
     array (
       'title' => '商务服务',
-      'url' => 'index.php?mod=category&catid=189',
+      'url' => '/shangwu/',
       'color' => '',
       'flag' => '',
       'ico' => '/template/default/images/index/icon_business.gif',

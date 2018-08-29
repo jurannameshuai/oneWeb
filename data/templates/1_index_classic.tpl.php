@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="<?=$mymps_global['SiteUrl']?>/template/default/js/uaredirect.js" type="text/javascript"></script>
-<script type="text/javascript">uaredirect("<?=$mymps_global['SiteUrl']?>/m/index.php");</script>
+<script type="text/javascript">uaredirect("<?=$mymps_global['MUrl']?>/index.php");</script>
 <title><?=$mymps_global['SiteCity']?>零壹网_<?=$mymps_global['SiteCity']?>百姓网_<?=$mymps_global['SiteCity']?>论坛_<?=$mymps_global['SiteCity']?>58同城网|赶集网</title>
 <meta name="keywords" content="<?php $mymps_global['seo_keywords']=str_replace('DD',$mymps_global['SiteCity'],$mymps_global['seo_keywords']); ?> <?php echo $mymps_global['seo_keywords']; ?>"/>
 <meta name="description" content="<?php $mymps_global['seo_description']=str_replace('DD',$mymps_global['SiteCity'],$mymps_global['seo_description']); ?> <?php echo $mymps_global['seo_description']; ?>"/>

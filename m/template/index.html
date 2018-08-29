@@ -12,6 +12,7 @@
 </head>
 
 <body class="{$mymps_global[cfg_tpl_dir]}">
+{$mymps}
 <div class="wrapper">
     {template header_search}
     {template navigation}
@@ -57,7 +58,7 @@
         <div class="index_slider">
             <div class="index_slider-wrap">
                 <div class="page">
-                <!--{php $navigation = get_mobile_nav(2);}-->
+                <!--{php $navigation = get_mobile_nav(2,1);}-->
     			<!--{loop $navigation $mymps}-->
                 <a href="{$mymps[url]}" class="item food">{if $mymps[ico]}<div class="icon"><img src="{$mymps_global[SiteUrl]}{$mymps[ico]}"></div>{/if}{echo cutstr($mymps[title],8)}</a>
                 <!--{/loop}-->

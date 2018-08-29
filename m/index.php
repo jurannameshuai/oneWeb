@@ -1,5 +1,5 @@
 <?php
-
+//phpinfo();
 define('WAP', true);
 define('CURSCRIPT', 'wap');
 define('IN_MYMPS', true);
@@ -33,7 +33,7 @@ else {
 include MYMPS_ROOT . '/m/include/inc_' . $mod . '.php';
 is_object($db) && $db->Close();
 $parent_cats = $loginfo = $newinfo = $mod = $ac = $mymps_global = $catid = $areaid = $db = $db_mymps = $mobile_settings = $member_log = NULL;
-
+$mymps_global['mUrl']=str_replace('www','3g',$mymps_global['SiteUrl']);
 function myget($var_name)
 {
 	if (isset($_SERVER[$var_name])) {
@@ -150,17 +150,28 @@ function pager()
 	return $nav;
 }
 
-function get_mobile_nav($typeid = 1)
+function get_mobile_nav($typeid = 1,$flag=0)
 {
 	static $res;
-	$data = read_static_cache('mobile_nav');
+	$data =false;
 
 	if ($data === false) {
 		$query = $GLOBALS['db']->query('SELECT * FROM `' . $GLOBALS['db_mymps'] . 'mobile_nav` WHERE isview = 2 ORDER BY displayorder ASC');
 
 		while ($row = $GLOBALS['db']->fetchRow($query)) {
 			$res[$row['typeid']][$row['id']]['title'] = $row['title'];
-			$res[$row['typeid']][$row['id']]['url'] = $row['url'];
+			if($flag==1){
+                $tmp_nav_id=str_replace('catid=','',strrchr($row['url'],"catid="));
+                if(is_numeric($tmp_nav_id)){
+                    $cate_info= $GLOBALS['db']->query('SELECT dir_typename FROM `' . $GLOBALS['db_mymps'] . 'category` WHERE catid='.$tmp_nav_id);
+                    $cate_row = $GLOBALS['db']->fetchRow($cate_info);
+                    $res[$row['typeid']][$row['id']]['url']='/'.$cate_row['dir_typename'].'/';
+                }else{
+                    $res[$row['typeid']][$row['id']]['url'] = $row['url'];
+                }
+			}else{
+                $res[$row['typeid']][$row['id']]['url'] = $row['url'];
+			}
 			$res[$row['typeid']][$row['id']]['color'] = $row['color'];
 			$res[$row['typeid']][$row['id']]['flag'] = $row['flag'];
 			$res[$row['typeid']][$row['id']]['ico'] = $row['ico'];

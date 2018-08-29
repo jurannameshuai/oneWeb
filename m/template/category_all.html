@@ -17,13 +17,13 @@
 <div class="navv">
 <div class="nav_tt nav_ttbg1">
 {if $mymps[icon]}<img src="{$mymps_global[SiteUrl]}{$mymps[icon]}" align="center" valign="middle" class="icon">&nbsp;{/if} 
-<a href="index.php?mod=category&catid={$mymps[catid]}">{$mymps[catname]}</a>
+<a href="{$mymps[uri]}">{$mymps[catname]}</a>
 <span class="apost"><a href="index.php?mod=post&catid={$mymps[catid]}">发信息<i class="filt-arrowright"></i></a></span>
 </div>
 <div class="big_dl sale">
 	<ul>
     	{loop $mymps[children] $c}
-		<li class="one_third"><a href="index.php?mod=category&catid={$c[catid]}">{echo cutstr($c['catname'],8)}</a></li>
+		<li class="one_third"><a href="{$c[uri]}">{echo cutstr($c['catname'],8)}</a></li>
 		{/loop}
 	</ul>
 </div>

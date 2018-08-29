@@ -38,8 +38,8 @@
         
         <div class="inner" style="display:none;">
             <?php if(is_array($cat_list)){foreach($cat_list as $k => $mymps) { ?>            <ul>
-                <a class="<? echo $mymps['catid'] == $catid ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$mymps['catid']?>" class="t">不限</a></li>
-                <?php if(is_array($mymps['children'])){foreach($mymps['children'] as $u => $w) { ?>                <a class="<? echo $w['catid'] == $catid ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$w['catid']?>"><?=$w['catname']?></a>
+                <a class="<? echo $mymps['catid'] == $catid ? 'selected' : '';; ?>" href="<?=$mymps['uri']?>" class="t">不限</a></li>
+                <?php if(is_array($mymps['children'])){foreach($mymps['children'] as $u => $w) { ?>                <a class="<? echo $w['catid'] == $catid ? 'selected' : '';; ?>" href="<?=$w['uri']?>"><?=$w['catname']?></a>
                 <!--<a class="<? echo $w['catid'] == $catid ? 'selected' : '';; ?>" href="<?=$w['uri']?>"><?=$w['catname']?></a>-->
                 <?php }} ?>
             </ul>
@@ -48,8 +48,8 @@
         
         <div class="inner" style="display:none;">
             <ul>
-                <a class="<? echo empty($areaid) ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$cat['catid']?>" class="t">不限</a></li>
-                <?php if(is_array($area_list)){foreach($area_list as $k => $mymps) { ?>                <a class="<? echo $mymps['areaid'] == $areaid ? 'selected' : '';; ?>" href="index.php?mod=category&catid=<?=$catid?>&areaid=<?=$mymps['areaid']?>"><?=$mymps['areaname']?></a>
+                <a class="<? echo empty($areaid) ? 'selected' : '';; ?>" href="javascript:void(0);" class="t">不限</a></li>
+                <?php if(is_array($area_list)){foreach($area_list as $k => $mymps) { ?>                <a class="<? echo $mymps['areaid'] == $areaid ? 'selected' : '';; ?>" href="<?=$mymps['uri']?>"><?=$mymps['areaname']?></a>
                 <?php }} ?>
             </ul>
         </div>

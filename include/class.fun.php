@@ -95,7 +95,7 @@ function get_categories_foreach($catid = 0, $type = 'category', $ifview = '2')
 	return $res;
 }
 
-function get_categories_tree($catid = 0, $type = 'category', $ifview = '2')
+function get_categories_tree($catid = 0, $type = 'category', $ifview = '2',$is_m=0)
 {
 	$data = read_static_cache($type . '_tree');
 	$rewritetype = ($type == 'channel' ? 'news' : 'category');
@@ -116,6 +116,9 @@ function get_categories_tree($catid = 0, $type = 'category', $ifview = '2')
 					$cat_arr[$row['catid']]['if_view'] = $row['if_view'];
 					$cat_arr[$row['catid']]['dir_typename'] = $row['dir_typename'];
 					$cat_arr[$row['catid']]['uri'] = Rewrite($rewritetype, array('catid' => $row['catid'], 'dir_typename' => $row['dir_typename'], 'dir_typename' => $row['dir_typename']));
+					if($is_m==1){
+                        $cat_arr[$row['catid']]['uri']=str_replace('www','3g',$cat_arr[$row['catid']]['uri']);
+					}
 					($type == 'category') && ($cat_arr[$row['catid']]['usecoin'] = $row['usecoin']);
 					$cat_arr[$row['catid']]['icon'] = $row['icon'];
 
@@ -126,6 +129,9 @@ function get_categories_tree($catid = 0, $type = 'category', $ifview = '2')
 						$cat_arr[$row['catid']]['children'][$row['childid']]['color'] = $row['childcolor'];
 						$cat_arr[$row['catid']]['children'][$row['childid']]['dir_typename'] = $row['child_dir_typename'];
 						$cat_arr[$row['catid']]['children'][$row['childid']]['uri'] = Rewrite($rewritetype, array('catid' => $row['childid'], 'dir_typename' => $row['child_dir_typename'], 'dir_typename' => $row['child_dir_typename']));
+                        if($is_m==1){
+                            $cat_arr[$row['catid']]['children'][$row['childid']]['uri']=str_replace('www','3g',$cat_arr[$row['catid']]['children'][$row['childid']]['uri']);
+                        }
 						($type == 'category') && ($cat_arr[$row['catid']]['children'][$row['childid']]['usecoin'] = $row['usecoin']);
 					}
 				}
@@ -160,7 +166,9 @@ function get_categories_tree($catid = 0, $type = 'category', $ifview = '2')
 					$cat_arr[$row['catid']]['if_view'] = $row['if_view'];
 					$cat_arr[$row['catid']]['dir_typename'] = $row['dir_typename'];
 					$cat_arr[$row['catid']]['uri'] = Rewrite($rewritetype, array('catid' => $row['catid'], 'dir_typename' => $row['dir_typename'], 'dir_typename' => $row['dir_typename']));
-
+                    if($is_m==1){
+                        $cat_arr[$row['catid']]['uri']=str_replace('www','3g',$cat_arr[$row['catid']]['uri']);
+                    }
 					if ($row['childid'] != NULL) {
 						$cat_arr[$row['catid']]['children'][$row['childid']]['catid'] = $row['childid'];
 						$cat_arr[$row['catid']]['children'][$row['childid']]['catname'] = $row['childname'];
@@ -169,7 +177,10 @@ function get_categories_tree($catid = 0, $type = 'category', $ifview = '2')
 						$cat_arr[$row['catid']]['children'][$row['childid']]['catorder'] = $row['childorder'];
 						$cat_arr[$row['catid']]['children'][$row['childid']]['dir_typename'] = $row['child_dir_typename'];
 						$cat_arr[$row['catid']]['children'][$row['childid']]['uri'] = Rewrite($rewritetype, array('catid' => $row['childid'], 'dir_typename' => $row['child_dir_typename'], 'dir_typename' => $row['child_dir_typename']));
-					}
+                        if($is_m==1){
+                            $cat_arr[$row['catid']]['children'][$row['childid']]['uri']=str_replace('www','3g',$cat_arr[$row['catid']]['children'][$row['childid']]['uri']);
+                        }
+                    }
 				}
 			}
 		}
