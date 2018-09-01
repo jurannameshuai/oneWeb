@@ -7,5 +7,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 #���������Ƿ���/��Ϣ:ƴ��α��̬��,����Ҫ����:#ע�͵�,��13,14��Ҫ��Ӧ
 RewriteRule ^(?!store|space)(.+)/$ index\.php\?mod=category&Catid=$1
-RewriteRule ^([^\/]+)/([0-9]+)\.html$ information\.php\?id=$2
+RewriteRule ^([^\/]+)/([0-9]+)\.html$ index\.php\?mod=information&id=$2
 

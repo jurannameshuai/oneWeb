@@ -3,8 +3,7 @@
 define('WAP', true);
 define('CURSCRIPT', 'wap');
 define('IN_MYMPS', true);
-define('IN_SMT', true);
-require_once dirname(__FILE__) . '/../include/global.php';
+define('IN_SMT', true);require_once dirname(__FILE__) . '/../include/global.php';
 require_once MYMPS_DATA . '/config.php';
 require_once MYMPS_DATA . '/config.db.php';
 require_once MYMPS_INC . '/db.class.php';
